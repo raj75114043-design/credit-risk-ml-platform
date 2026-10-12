@@ -1,0 +1,9 @@
+{
+  "applications": 42000,
+  "mature": 28035,
+  "default_rate": 0.0784,
+  "fraud_rate": 0.0174,
+  "defaults_with_losses": 2197,
+  "card_customers": 8000,
+  "fingerprint": "796205328573"
+}
