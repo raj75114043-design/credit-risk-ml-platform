@@ -59,7 +59,7 @@ New-to-credit applicants: AUC 0.70 (vs 0.85 with a bureau record). GBM monotonic
 
 Approval-rate ratio women / men **0.98** (four-fifths rule ≥ 0.80); approval gap among borrowers who repaid **1.6 pts**.
 
-**Regression — LGD (658 held-out defaulted loans)**
+**Regression — LGD (660 held-out defaulted loans)**
 
 | Model | MAE | RMSE | Portfolio loss error |
 |---|---|---|---|
