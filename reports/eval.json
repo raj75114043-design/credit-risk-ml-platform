@@ -1,0 +1,567 @@
+{
+  "split_sizes": {
+    "dev": 15396,
+    "calibration": 6093,
+    "oot": 6339,
+    "immature": 13965
+  },
+  "leakage_audit": [
+    {
+      "feature": "collection_calls_90d",
+      "availability": "post_disbursal (leakage)",
+      "univariate_auc": 1.0,
+      "used": false,
+      "flag": "LEAKAGE SUSPECT"
+    },
+    {
+      "feature": "bureau_score",
+      "availability": "application",
+      "univariate_auc": 0.726,
+      "used": true,
+      "flag": ""
+    },
+    {
+      "feature": "avg_bank_balance",
+      "availability": "application",
+      "univariate_auc": 0.717,
+      "used": true,
+      "flag": ""
+    },
+    {
+      "feature": "utilisation_pct",
+      "availability": "application",
+      "univariate_auc": 0.699,
+      "used": true,
+      "flag": ""
+    },
+    {
+      "feature": "interest_rate",
+      "availability": "pricing_decision (set from the risk grade \u2014 circular)",
+      "univariate_auc": 0.687,
+      "used": false,
+      "flag": "excluded"
+    },
+    {
+      "feature": "foir",
+      "availability": "application",
+      "univariate_auc": 0.675,
+      "used": true,
+      "flag": ""
+    },
+    {
+      "feature": "enquiries_6m",
+      "availability": "application",
+      "univariate_auc": 0.654,
+      "used": true,
+      "flag": ""
+    },
+    {
+      "feature": "monthly_income",
+      "availability": "application",
+      "univariate_auc": 0.647,
+      "used": true,
+      "flag": ""
+    },
+    {
+      "feature": "active_loans",
+      "availability": "application",
+      "univariate_auc": 0.614,
+      "used": true,
+      "flag": ""
+    },
+    {
+      "feature": "employment",
+      "availability": "application",
+      "univariate_auc": 0.613,
+      "used": true,
+      "flag": ""
+    },
+    {
+      "feature": "max_dpd_12m",
+      "availability": "application",
+      "univariate_auc": 0.6,
+      "used": true,
+      "flag": ""
+    },
+    {
+      "feature": "product",
+      "availability": "application",
+      "univariate_auc": 0.55,
+      "used": true,
+      "flag": ""
+    },
+    {
+      "feature": "city_tier",
+      "availability": "application",
+      "univariate_auc": 0.543,
+      "used": true,
+      "flag": ""
+    },
+    {
+      "feature": "application_hour",
+      "availability": "fraud_only",
+      "univariate_auc": 0.528,
+      "used": false,
+      "flag": "excluded"
+    },
+    {
+      "feature": "channel",
+      "availability": "application",
+      "univariate_auc": 0.525,
+      "used": true,
+      "flag": ""
+    },
+    {
+      "feature": "ltv",
+      "availability": "application",
+      "univariate_auc": 0.516,
+      "used": true,
+      "flag": ""
+    },
+    {
+      "feature": "phone_age_days",
+      "availability": "fraud_only",
+      "univariate_auc": 0.513,
+      "used": false,
+      "flag": "excluded"
+    },
+    {
+      "feature": "age",
+      "availability": "application",
+      "univariate_auc": 0.512,
+      "used": true,
+      "flag": ""
+    },
+    {
+      "feature": "email_age_days",
+      "availability": "fraud_only",
+      "univariate_auc": 0.512,
+      "used": false,
+      "flag": "excluded"
+    },
+    {
+      "feature": "bureau_vintage_months",
+      "availability": "application",
+      "univariate_auc": 0.508,
+      "used": true,
+      "flag": ""
+    },
+    {
+      "feature": "tenure_months",
+      "availability": "application",
+      "univariate_auc": 0.507,
+      "used": true,
+      "flag": ""
+    },
+    {
+      "feature": "loan_amount",
+      "availability": "application",
+      "univariate_auc": 0.505,
+      "used": true,
+      "flag": ""
+    },
+    {
+      "feature": "gender",
+      "availability": "protected (fairness monitoring only)",
+      "univariate_auc": 0.502,
+      "used": false,
+      "flag": "excluded"
+    }
+  ],
+  "leakage_caught": 1.0,
+  "leaky_model_auc_oot": 0.9997904836056863,
+  "pd_oot": {
+    "scorecard": {
+      "auc": 0.8077512255745458,
+      "gini": 0.6155024511490916,
+      "ks": 0.47089814529810525,
+      "brier": 0.0760572536300042,
+      "mean_pd": 0.09636437519403908,
+      "default_rate": 0.10048903612557186,
+      "calibration_mae": 0.009982739331887449
+    },
+    "gbm": {
+      "auc": 0.8247278351752972,
+      "gini": 0.6494556703505945,
+      "ks": 0.4927038187047207,
+      "brier": 0.07284131666650791,
+      "mean_pd": 0.08943140882631895,
+      "default_rate": 0.10048903612557186,
+      "calibration_mae": 0.016125929311920435
+    },
+    "bureau_score_only": {
+      "auc": 0.733907984584439
+    }
+  },
+  "pd_auc_gbm": 0.8247278351752972,
+  "pd_auc_scorecard": 0.8077512255745458,
+  "pd_lift_vs_bureau": 0.09081985059085829,
+  "pd_ks_gbm": 0.4927038187047207,
+  "pd_calibration_mae_gbm": 0.016125929311920435,
+  "pd_calibration_table_gbm": [
+    {
+      "decile": 1,
+      "predicted": 0.0062,
+      "observed": 0.0095,
+      "n": 634
+    },
+    {
+      "decile": 2,
+      "predicted": 0.0157,
+      "observed": 0.0079,
+      "n": 634
+    },
+    {
+      "decile": 3,
+      "predicted": 0.0242,
+      "observed": 0.0237,
+      "n": 634
+    },
+    {
+      "decile": 4,
+      "predicted": 0.0292,
+      "observed": 0.0221,
+      "n": 634
+    },
+    {
+      "decile": 5,
+      "predicted": 0.0509,
+      "observed": 0.041,
+      "n": 634
+    },
+    {
+      "decile": 6,
+      "predicted": 0.0584,
+      "observed": 0.0742,
+      "n": 633
+    },
+    {
+      "decile": 7,
+      "predicted": 0.0697,
+      "observed": 0.0899,
+      "n": 634
+    },
+    {
+      "decile": 8,
+      "predicted": 0.0982,
+      "observed": 0.123,
+      "n": 634
+    },
+    {
+      "decile": 9,
+      "predicted": 0.1548,
+      "observed": 0.1845,
+      "n": 634
+    },
+    {
+      "decile": 10,
+      "predicted": 0.3871,
+      "observed": 0.429,
+      "n": 634
+    }
+  ],
+  "thin_file_auc": {
+    "new_to_credit": 0.6982579489476042,
+    "with_bureau": 0.8461279513078486
+  },
+  "gbm_monotone_in_bureau": 1.0,
+  "score_psi": 0.03808244584928888,
+  "csi": {
+    "channel": 0.6825,
+    "employment": 0.0638,
+    "bureau_score": 0.0248,
+    "monthly_income": 0.0207,
+    "max_dpd_12m": 0.0187,
+    "avg_bank_balance": 0.017,
+    "utilisation_pct": 0.0143,
+    "bureau_vintage_months": 0.0115,
+    "active_loans": 0.0085,
+    "foir": 0.007,
+    "loan_amount": 0.0026,
+    "age": 0.0013,
+    "enquiries_6m": 0.0006,
+    "tenure_months": 0.0004,
+    "city_tier": 0.0002,
+    "ltv": 0.0002,
+    "product": 0.0002
+  },
+  "drift_alerts": [
+    "channel"
+  ],
+  "drift_alert_raised": 1.0,
+  "pd_underprediction_oot": 0.011057627299252915,
+  "default_rate_by_channel_oot": {
+    "branch": 0.0814,
+    "digital_partner": 0.1473,
+    "dsa": 0.0686
+  },
+  "policy": {
+    "gbm_cutoff_pd": 0.22535211267605634,
+    "scorecard_cutoff_pd": 0.23409036031480318,
+    "gbm": {
+      "approval_rate": 0.8954093705631803,
+      "bad_rate_approved": 0.06307258632840028,
+      "profit_crore": 7.966738885,
+      "approved": 5676
+    },
+    "scorecard": {
+      "approval_rate": 0.8946206026187096,
+      "bad_rate_approved": 0.06753658966672545,
+      "profit_crore": 7.81288645,
+      "approved": 5671
+    },
+    "approve_all": {
+      "approval_rate": 1.0,
+      "bad_rate_approved": 0.10048903612557186,
+      "profit_crore": 6.76936016,
+      "approved": 6339
+    },
+    "bureau_rule_700": {
+      "approval_rate": 0.49692380501656414,
+      "bad_rate_approved": 0.040952380952380955,
+      "profit_crore": 4.54806458,
+      "approved": 3150
+    }
+  },
+  "policy_beats_approve_all": 1.0,
+  "policy_beats_bureau_rule": 1.0,
+  "fairness": {
+    "approval_rate": {
+      "F": 0.8855721393034826,
+      "M": 0.8999768999769
+    },
+    "disparate_impact_ratio": 0.9839942995494805,
+    "equal_opportunity_gap": 0.01629581353340248,
+    "approval_rate_among_good": {
+      "F": 0.9214922048997772,
+      "M": 0.9377880184331797
+    },
+    "calibration_by_group": {
+      "F": {
+        "predicted": 0.0950451706027369,
+        "observed": 0.10646766169154229
+      },
+      "M": {
+        "predicted": 0.08682488048938197,
+        "observed": 0.09771309771309772
+      }
+    }
+  },
+  "fairness_di_ratio": 0.9839942995494805,
+  "fairness_eo_gap": 0.01629581353340248,
+  "example_reasons": [
+    {
+      "feature": "bureau_score",
+      "value": 516.0,
+      "bin": "(-inf, 662.0]",
+      "points_lost": 40.6
+    },
+    {
+      "feature": "avg_bank_balance",
+      "value": 1200.0,
+      "bin": "(-inf, 9600.0]",
+      "points_lost": 29.2
+    },
+    {
+      "feature": "foir",
+      "value": 0.83,
+      "bin": "(0.672, inf]",
+      "points_lost": 28.7
+    }
+  ],
+  "lgd": {
+    "product_mean": {
+      "mae": 0.22287583161464863,
+      "rmse": 0.28239119807801677,
+      "portfolio_loss_error": 0.0407548457194788,
+      "by_product": {
+        "gold": -0.09107421734590226,
+        "personal": 0.051477600303757774,
+        "two_wheeler": -0.10672784862005046
+      }
+    },
+    "direct_gbm": {
+      "mae": 0.2010299310243031,
+      "rmse": 0.26447247832882387,
+      "portfolio_loss_error": 0.013214260114090997,
+      "by_product": {
+        "gold": 0.3187042479287291,
+        "personal": 0.016876631498253733,
+        "two_wheeler": -0.07670523584751271
+      }
+    },
+    "two_stage": {
+      "mae": 0.19594908811959644,
+      "rmse": 0.2643439756522388,
+      "portfolio_loss_error": 0.030422731058699446,
+      "by_product": {
+        "gold": 0.004207072758251147,
+        "personal": 0.03748501710931983,
+        "two_wheeler": -0.07355151550050608
+      }
+    }
+  },
+  "lgd_cure_auc": 0.7254412047348249,
+  "lgd_distribution": {
+    "cured_share": 0.28311333636777425,
+    "mean": 0.4493243969048703,
+    "share_below_0.1": 0.3154301319981793,
+    "share_above_0.7": 0.3190714610832954
+  },
+  "lgd_beats_product_mean": 1.0,
+  "lgd_portfolio_error": 0.030422731058699446,
+  "segmentation": {
+    "k_selected": 6,
+    "k_search": [
+      {
+        "k": 2,
+        "silhouette": 0.2245,
+        "inertia": 49967.9819,
+        "gmm_bic": 152399.0647
+      },
+      {
+        "k": 3,
+        "silhouette": 0.2663,
+        "inertia": 39075.3831,
+        "gmm_bic": 142770.803
+      },
+      {
+        "k": 4,
+        "silhouette": 0.2803,
+        "inertia": 32030.5385,
+        "gmm_bic": 138210.8106
+      },
+      {
+        "k": 5,
+        "silhouette": 0.2805,
+        "inertia": 27629.8825,
+        "gmm_bic": 124424.7419
+      },
+      {
+        "k": 6,
+        "silhouette": 0.3022,
+        "inertia": 23322.2161,
+        "gmm_bic": 95458.1884
+      },
+      {
+        "k": 7,
+        "silhouette": 0.2534,
+        "inertia": 22375.6086,
+        "gmm_bic": 86514.4958
+      },
+      {
+        "k": 8,
+        "silhouette": 0.2333,
+        "inertia": 21602.5311,
+        "gmm_bic": 91477.8531
+      },
+      {
+        "k": 9,
+        "silhouette": 0.2229,
+        "inertia": 20989.5667,
+        "gmm_bic": 81651.7276
+      },
+      {
+        "k": 10,
+        "silhouette": 0.1726,
+        "inertia": 20438.3673,
+        "gmm_bic": 64867.4773
+      }
+    ],
+    "ari_vs_latent": 0.8571864831618164,
+    "segments": 6,
+    "risk_spread": 20.846023688663283,
+    "profile": [
+      {
+        "segment": "Cash-stressed",
+        "customers": 788,
+        "utilisation": 0.91,
+        "payment_ratio": 0.131,
+        "cash_share": 0.353,
+        "travel_share": 0.048,
+        "txns_per_month": 14.282,
+        "default_rate": 0.222
+      },
+      {
+        "segment": "New / building",
+        "customers": 1240,
+        "utilisation": 0.46,
+        "payment_ratio": 0.595,
+        "cash_share": 0.053,
+        "travel_share": 0.062,
+        "txns_per_month": 12.764,
+        "default_rate": 0.057
+      },
+      {
+        "segment": "Revolvers",
+        "customers": 1688,
+        "utilisation": 0.705,
+        "payment_ratio": 0.199,
+        "cash_share": 0.057,
+        "travel_share": 0.062,
+        "txns_per_month": 21.707,
+        "default_rate": 0.051
+      },
+      {
+        "segment": "Premium travellers",
+        "customers": 690,
+        "utilisation": 0.349,
+        "payment_ratio": 0.884,
+        "cash_share": 0.04,
+        "travel_share": 0.393,
+        "txns_per_month": 34.153,
+        "default_rate": 0.013
+      },
+      {
+        "segment": "Transactors (pay in full)",
+        "customers": 2186,
+        "utilisation": 0.254,
+        "payment_ratio": 0.914,
+        "cash_share": 0.04,
+        "travel_share": 0.076,
+        "txns_per_month": 27.868,
+        "default_rate": 0.012
+      },
+      {
+        "segment": "Dormant",
+        "customers": 1408,
+        "utilisation": 0.101,
+        "payment_ratio": 0.91,
+        "cash_share": 0.037,
+        "travel_share": 0.039,
+        "txns_per_month": 1.026,
+        "default_rate": 0.011
+      }
+    ]
+  },
+  "segmentation_ari": 0.8571864831618164,
+  "segment_risk_spread": 20.846023688663283,
+  "fraud": {
+    "isolation_forest": {
+      "auroc": 0.92594649989718,
+      "precision_top1pct": 0.7023809523809523,
+      "recall_top3pct": 0.5939643347050755
+    },
+    "lof": {
+      "auroc": 0.7166899677693284,
+      "precision_top1pct": 0.13333333333333333,
+      "recall_top3pct": 0.2139917695473251
+    },
+    "rule": {
+      "auroc": 0.6818146435423207,
+      "precision_top1pct": 0.29285714285714287,
+      "recall_top3pct": 0.29492455418381347
+    }
+  },
+  "fraud_base_rate": 0.017357142857142856,
+  "fraud_auroc": 0.92594649989718,
+  "fraud_precision_top1pct": 0.7023809523809523,
+  "fraud_iforest_beats_baselines": 1.0,
+  "rings": {
+    "shared_devices_3plus": 114,
+    "flagged": 61,
+    "precision": 0.8360655737704918,
+    "fraud_captured": 0.3786008230452675
+  },
+  "ring_precision": 0.8360655737704918
+}
